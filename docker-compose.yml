@@ -7,6 +7,8 @@ services:
     restart: always
     volumes:
       - $PWD/data/redis:/data
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
   
   oj-postgres:
     image: postgres:10-alpine
@@ -14,6 +16,8 @@ services:
     restart: always
     volumes:
       - $PWD/data/postgres:/var/lib/postgresql/data
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
     environment:
       - POSTGRES_DB=onlinejudge
       - POSTGRES_USER=onlinejudge
@@ -25,6 +29,8 @@ services:
     restart: always
     volumes:
       - $PWD/data/forum:/forum
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
     
   judge-server:
     # image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/judge_server
@@ -49,6 +55,8 @@ services:
       - $PWD/data/backend/test_case:/test_case:ro
       - $PWD/data/judge_server/log:/log
       - $PWD/data/judge_server/run:/judger
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
     environment:
       - SERVICE_URL=http://judge-server:8080
       - BACKEND_URL=http://oj-backend:8000/api/judge_server_heartbeat/
@@ -56,14 +64,8 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    image: registry.cn-qingdao.aliyuncs.com/wenjian_oj/backend
-    # 稳定版
-    # image: registry.cn-hangzhou.aliyuncs.com/wenjian_oj/oj-backend
-    # 开发版
-    # image: registry.cn-qingdao.aliyuncs.com/wenjian_oj/vue
-    # 版本备份镜像仓库
-    # image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/oj_backend
-    # 官方版
+    #image: registry.cn-qingdao.aliyuncs.com/wenjian_oj/backend
+    image: luyencode/oj-backend
     container_name: oj-backend
     restart: always
     depends_on:
@@ -74,6 +76,8 @@ services:
     volumes:
       - $PWD/data/backend:/data
       - $PWD/data/forum:/forum
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
     environment:
       - POSTGRES_DB=onlinejudge
       - POSTGRES_USER=onlinejudge
