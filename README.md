@@ -35,6 +35,6 @@ Sau đó, hãy kiểm tra bằng lệnh `docker ps -a`，nếu không có contai
 ## Sử dụng
 
 
-Truy cập cổng HTTP 80 hoặc cổng HTTPS 443 của máy chủ thông qua trình duyệt và bạn có thể bắt đầu sử dụng. Đường dẫn trang quản lý là `/ admin`, tên người dùng quản trị viên được tự động thêm vào trong quá trình cài đặt là` root` và mật khẩu là `rootroot`. **Vui lòng thay đổi mật khẩu ngay**.
+Truy cập cổng HTTP 80 hoặc cổng HTTPS 443 của máy chủ thông qua trình duyệt và bạn có thể bắt đầu sử dụng. Đường dẫn trang quản lý là `/admin`, tên người dùng quản trị viên được tự động thêm vào trong quá trình cài đặt là `root` và mật khẩu là `rootroot`. **Vui lòng thay đổi mật khẩu ngay**.
 
 Tài liệu: http://docs.onlinejudge.me/
