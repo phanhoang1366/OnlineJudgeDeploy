@@ -30,7 +30,7 @@ Các module trên đều được đóng gói Docker và đã đẩy lên Docker
 3. Clone repo
 
     ```bash
-    git clone -b 2.0 https://github.com/luyencode/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
+    git clone -b 2.0 https://github.com/phanhoang1366/OnlineJudgeDeploy.git && cd OnlineJudgeDeploy
     ```
 
 4. Khởi động
