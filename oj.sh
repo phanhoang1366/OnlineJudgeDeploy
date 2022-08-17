@@ -17,7 +17,10 @@ echo "3. Cap nhat"
 echo "4. Backup"
 echo "5. Nhap du lieu"
 echo "6. Khoi dong lai"
-echo "7. Dong"
+echo "7. Dung (stop) server"
+echo ""
+echo "Nhan Ctrl-C de thoat khoi script"
+echo ""
 read -p "Vui long nhap code:" num
 if [ "$num" == "1" ]
     then
