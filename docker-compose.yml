@@ -33,12 +33,12 @@ services:
       - "/etc/timezone:/etc/timezone:ro"
     
   judge-server:
-    # image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/judge_server
-    # 原版镜像
-    # image: registry.cn-hangzhou.aliyuncs.com/wenjian_oj/judgeserver
-    # 开发版镜像
+    # default image
     image: phanhoang1366/judge-server
-    # 稳定版镜像
+    # slim version
+    #image: phanhoang1366/judge-server:latest-slim
+    # debian bullseye with new compilers
+    #image: phanhoang1366/judge-server:bullseye-slim
     container_name: judge-server
     restart: always
     read_only: true
@@ -64,8 +64,9 @@ services:
       # - judger_debug=1
   
   oj-backend:
-    #image: registry.cn-qingdao.aliyuncs.com/wenjian_oj/backend
     image: phanhoang1366/oj-backend:master
+    # change to this if you use bullseye
+    #image: phanhoang1366/oj-backend:bullseye
     container_name: oj-backend
     restart: always
     depends_on:
